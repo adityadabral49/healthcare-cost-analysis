@@ -1,104 +1,93 @@
-🏥 Healthcare Claims Cost Analysis Dashboard
-📌 Project Overview
+# 🏥 Healthcare Claims Cost Analysis Dashboard
 
-This project analyzes healthcare insurance claims data to identify where money is being spent and lost.
-The goal is to help C-level executives understand cost drivers across claim types, members, CPT codes, and ICD codes, and take data-driven decisions to improve profitability.
+## 📌 Project Overview
+This project analyzes healthcare insurance claims data using **SQL and Power BI** to identify  
+**cost drivers, reimbursement efficiency, and financial leakage**.
 
-The dashboard is built using Power BI (can also be adapted to Tableau) and answers key business questions around healthcare spending.
+The dashboard is designed to help **insurance providers and healthcare decision-makers**
+understand where costs are concentrated and how reimbursement performance can be improved.
 
-🎯 Business Problem
+---
 
-The insurance company is losing money and wants to understand:
+## 🎯 Business Problem
+Healthcare insurers are facing rising claim costs and revenue leakage due to gaps between  
+**billed and paid amounts**.
 
-Which services are most expensive
+The objective of this analysis is to answer:
+- Which claim types are the most expensive?
+- Which CPT and ICD codes drive the highest spending?
+- Which members contribute disproportionately to total costs?
+- How efficient is the reimbursement process?
 
-Which procedures and diagnosis codes drive the highest costs
+---
 
-How billed amounts compare to paid amounts
+## 🧮 Data Preparation & SQL Analysis
+SQL was used to **clean, transform, and aggregate claims data** before visualization.
 
-Which members contribute most to total spending
+### Key SQL tasks performed:
+- Aggregated **total billed vs total paid amounts**
+- Calculated **reimbursement rate and leakage**
+- Identified **top CPT and ICD codes by total paid amount**
+- Ranked **high-cost members**
+- Analyzed **claim type cost vs volume**
+- Computed **provider-wise paid ratios**
 
-❓ Key Questions Answered
+📌 These SQL outputs were then connected to Power BI for visualization.
 
-Which claim types are the most expensive?
+---
 
-Which CPT codes and ICD codes drive the highest spending?
+## 📊 Key KPIs
+- **Total Billed Amount:** ₹2.06M  
+- **Total Paid Amount:** ₹1.55M  
+- **Leakage Amount:** ₹511.4K  
+- **Reimbursement Rate:** 75%  
+- **Total Claims:** 449  
+- **Total Members:** 100  
 
-Which members account for the largest share of total costs?
+---
 
-How do billed amounts compare to paid amounts across claim types and procedures?
+## 🔍 Key Insights
+- **Inpatient claims** are the most expensive, contributing the highest total paid amount despite lower claim volume.
+- A **small set of CPT codes** drives the majority of procedural costs; CPT **67890 alone contributes ~₹242.7K**.
+- **Top 5 members account for ~₹1.43M** out of ₹1.55M total paid costs, indicating strong cost concentration.
+- Overall **reimbursement efficiency is 75%**, resulting in a **leakage of ~₹511.4K**.
+- Provider-wise paid ratios vary, highlighting inconsistent reimbursement performance.
 
-📊 Dashboard Highlights
-🔹 KPI Cards
+---
 
-Total Members
+## ✅ Recommended Actions
+- Prioritize **cost control and utilization review** for high-cost inpatient claims.
+- Monitor and optimize **top CPT and ICD codes** driving spend.
+- Implement **targeted care management programs** for high-cost members.
+- Improve billing and reimbursement workflows to **reduce leakage**.
 
-Total Claims
+---
 
-Total Billed Amount
+## 🛠 Tools & Technologies
+- **SQL** – Data aggregation, joins, window functions, ranking, KPI calculations  
+- **Power BI** – Interactive dashboards & data storytelling  
+- **Excel** – Initial data validation and formatting  
 
-Total Paid Amount
+---
 
-Paid Ratio (Paid ÷ Billed)
+## 📸 Dashboard Preview
 
-🔹 Claim Type Cost Breakdown
+<img width="1270" height="871" alt="Dashboard_preview" src="https://github.com/user-attachments/assets/18d11199-41ab-4583-b9e6-9324df771d52" />
 
-Comparison of Total Billed Amount vs Total Paid Amount
+---
 
-Number of claims by claim type
+## 👤 Author
+**[Aditya Dabral]**  
 
-Insight: Inpatient claims are the most expensive despite fewer claims than outpatient
+📫 LinkedIn: www.linkedin.com/in/aditya-dabral49 
+💻 GitHub: https://github.com/adityadabral49/healthcare-cost-analysis 
 
-🔹 Top Members Cost Breakdown
+---
 
-Identifies members contributing the highest total costs
+## 🚀 Why This Project Matters
+This project demonstrates:
+- Strong **SQL-based data analysis**
+- Ability to convert data into **business-ready insights**
+- Hands-on experience with **healthcare claims data**
+- End-to-end workflow from **SQL → Power BI dashboard**
 
-Helps detect high-cost members for care management
-
-🔹 Top 10 CPT Codes by Total Paid Amount
-
-Highlights procedures driving maximum payouts
-
-Includes Average Paid Amount for deeper insight
-
-🔹 Top 10 ICD Codes by Total Paid Amount
-
-Identifies diagnosis codes associated with high spending
-
-Useful for risk and utilization analysis
-
-🔹 Interactive Slicers
-
-Gender
-
-Age Group
-
-Claim Type
-
-🧠 Key Insights
-
-Inpatient claims account for the highest total billed and paid amounts.
-
-Certain CPT and ICD codes disproportionately drive healthcare spending.
-
-A small number of members contribute significantly to total costs.
-
-The paid ratio (~75%) highlights areas of reimbursement leakage.
-
-🛠️ Tech Stack
-
-SQL – Data aggregation and analysis
-
-Power BI – Data modeling, DAX, and dashboard visualization
-
-Excel / CSV – Source data
-
-📐 Data Modeling
-
-Star-schema style model
-
-Fact table: claims
-
-Dimension table: members
-
-Relationship based on member_id
